@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+  <rect width="400" height="600" fill="#f0eee5"></rect>
+  <rect x="55" y="45" width="290" height="510" rx="12" fill="#dce6df"></rect>
+  <path d="M145 235 L200 195 L255 235 V320
+           H145 Z" fill="#496b5a"></path>
+  <path d="M155 230 V315 M200 205 V315 M245 230 V315" stroke="#f0eee5" stroke-width="5" fill="none"></path>
+  <text x="200" y="385" text-anchor="middle" font-family="sans-serif" font-size="25" fill="#304b3e">Portada no</text>
+  <text x="200" y="420" text-anchor="middle" font-family="sans-serif" font-size="25" fill="#304b3e">disponible</text>
+</svg>
