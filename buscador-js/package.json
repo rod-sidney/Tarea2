@@ -1,0 +1,16 @@
+{
+  "name": "estanteria-comun-buscador",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Parte A de Tarea 2: buscador de libros con JavaScript, Bootstrap y Sass",
+  "scripts": {
+    "sass:build": "sass --load-path=node_modules scss/main.scss css/estilos.css --style=expanded",
+    "sass:watch": "sass --load-path=node_modules --watch scss/main.scss:css/estilos.css --style=expanded"
+  },
+  "dependencies": {
+    "bootstrap": "5.3.3"
+  },
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}

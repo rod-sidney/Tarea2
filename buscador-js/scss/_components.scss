@@ -1,0 +1,143 @@
+@use "variables" as vars;
+@use "functions";
+@use "mixins";
+
+:root {
+  --ec-surface: #ffffff;
+  --ec-border: #e4e0d6;
+  --ec-shadow: 0 0.6rem 1.8rem rgba(36, 49, 45, 0.07);
+  --ec-muted: #626e68;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  @include mixins.app-focus-ring;
+}
+
+.app-hero {
+  @include mixins.app-surface;
+  padding: functions.rem-size(1.25);
+  background-image: linear-gradient(135deg, rgba(vars.$primary, 0.09), rgba(vars.$secondary, 0.12));
+
+  .app-hero__eyebrow {
+    color: vars.$primary;
+    font-size: functions.rem-size(0.8);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .app-hero__title {
+    max-width: 18ch;
+    margin-inline: auto;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+  }
+
+  .app-hero__description {
+    max-width: 42rem;
+    margin-inline: auto;
+    color: var(--ec-muted);
+  }
+}
+
+.section-block {
+  margin-block: functions.rem-size(2.5);
+}
+
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: functions.rem-size(0.75);
+  margin-bottom: functions.rem-size(1.25);
+
+  .section-heading__description {
+    margin-bottom: 0;
+    color: var(--ec-muted);
+  }
+}
+
+.book-results-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: functions.rem-size(1rem);
+
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.book-placeholder {
+  @include mixins.app-surface;
+  display: grid;
+  min-height: functions.rem-size(10);
+  place-items: center;
+  padding: functions.rem-size(1.5);
+  color: var(--ec-muted);
+  text-align: center;
+}
+
+.reading-list-table {
+  vertical-align: middle;
+
+  th {
+    white-space: nowrap;
+  }
+}
+
+.proposal-form {
+  @include mixins.app-surface;
+  padding: functions.rem-size(1.25);
+
+  .form-section-title {
+    margin-top: functions.rem-size(1.25);
+    margin-bottom: functions.rem-size(0.75);
+    font-family: vars.$font-family-sans-serif;
+    font-size: functions.rem-size(1.05);
+    font-weight: 700;
+  }
+}
+
+.app-footer {
+  margin-top: functions.rem-size(3);
+  padding-block: functions.rem-size(1.5);
+  background-color: vars.$dark;
+  color: #ffffff;
+
+  p {
+    margin-bottom: 0;
+    font-size: functions.rem-size(0.9);
+  }
+}
+
+@media (min-width: 48rem) {
+  .app-hero {
+    padding: functions.rem-size(2.5);
+  }
+
+  .proposal-form {
+    padding: functions.rem-size(2rem);
+  }
+}
