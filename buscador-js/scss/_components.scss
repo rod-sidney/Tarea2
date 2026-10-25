@@ -7,6 +7,7 @@
   --ec-border: #e4e0d6;
   --ec-shadow: 0 0.6rem 1.8rem rgba(36, 49, 45, 0.07);
   --ec-muted: #626e68;
+  --ec-grid-gap: 1rem;
 }
 
 html {
@@ -78,7 +79,7 @@ textarea {
 .book-results-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: functions.rem-size(1rem);
+  gap: var(--ec-grid-gap);
 
   @media (min-width: 576px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));

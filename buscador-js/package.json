@@ -8,7 +8,7 @@
     "sass:watch": "sass --load-path=node_modules --watch scss/main.scss:css/estilos.css --style=expanded"
   },
   "dependencies": {
-    "bootstrap": "5.3.3"
+    "bootstrap": "^5.3.3"
   },
   "devDependencies": {
     "sass": "^1.83.0"

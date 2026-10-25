@@ -107,4 +107,5 @@ La documentación del proceso de depuración y las capturas se encuentran en la 
 
 | # | Fecha | Hash | Mensaje | Zona | Cambio |
 |---|---|---|---|---|---|
-| 2026-10-24 | 93230ec | Crear estructura inicial del repositorio | Carpetas | Global |
+| 1 | 2026-10-24 | 93230ec | Crear estructura inicial del repositorio | Carpetas | Global |
+| 2 | 2026-10-24 | fc7f875 | Parte A - Creación de html y estilos con sass | buscador-js | Estructura HTML y archivos scss |
