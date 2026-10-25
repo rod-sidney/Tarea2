@@ -111,3 +111,4 @@ La documentación del proceso de depuración y las capturas se encuentran en la 
 | 2 | 2026-10-24 | fc7f875 | Parte A - Creación de html y estilos con sass | buscador-js | Estructura HTML y archivos scss |
 | 3 | 2026-10-24 | 6cef7fa | Cambios para scss y crear archivo main.js | buscador-js | Cambios en cuadrícula de resultados de búsqueda |
 | 4 | 2026-10-25 | 3d1d9eb | Creación de la consulta al API y del proceso para mostrar los resultados obtenidos | buscador-js/js | api.js, renderizado.js
+| 5 | 2026-10-25 | 408e3fc | Envío de form de buscar libros, estados de interfaz y errores | buscador-js | busqueda.js, main.js |

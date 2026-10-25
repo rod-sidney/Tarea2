@@ -38,25 +38,48 @@ function obtenerAutores(libro) {
 function crearImagenPortada(libro, clases) {
     const imagen = document.createElement("img");
     const idPortada = Number(libro.cover_i);
-    const tienePortada = Number.isInteger(idPortada) && idPortada > 0;
 
-    if (tienePortada) {
-        imagen.src = `https://covers.openlibrary.org/b/id/${idPortada}-M.jpg`;
-        imagen.alt = `Portada de ${libro.title || "libro sin título"}`;
-    } else {
-        imagen.src = PORTADA_ALTERNATIVA;
-        imagen.alt = "Portada no disponible";
-    }
+    const tienePortada =
+        Number.isInteger(idPortada) && idPortada > 0;
 
     imagen.className = clases;
     imagen.loading = "lazy";
 
-    //usar alternativa si hay error
+    // Si no tiene portada, usa la alternativa
+    if (!tienePortada) {
+        imagen.src = PORTADA_ALTERNATIVA;
+        imagen.alt = "Portada no disponible";
+
+        return imagen;
+    }
+
+    const urlPortada =
+        `https://covers.openlibrary.org/b/id/${idPortada}-M.jpg`;
+
+    imagen.alt = `Portada de ${libro.title || "libro sin título"}`;
+
+    let reintentos = 0;
+
     imagen.onerror = function () {
+        // reintenta una vez
+        if (reintentos < 1) {
+            reintentos++;
+
+            setTimeout(function () {
+                imagen.src = `${urlPortada}?retry=${reintentos}`;
+            }, 800);
+
+            return;
+        }
+
+        // si vuelve a fallar, usa alternativa
         imagen.onerror = null;
         imagen.src = PORTADA_ALTERNATIVA;
         imagen.alt = "Portada no disponible";
     };
+
+    // solicitud de la portada
+    imagen.src = urlPortada;
 
     return imagen;
 }
