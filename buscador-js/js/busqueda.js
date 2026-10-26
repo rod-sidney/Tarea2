@@ -7,6 +7,8 @@ import {
     mostrarDetalleLibro
 } from "./renderizado.js";
 
+import { agregarLibro } from "./lecturas.js";
+
 // Obtener elementos de index.html
 const formulario = document.getElementById("formBusqueda");
 const campoBusqueda = document.getElementById("textoBusqueda");
@@ -59,7 +61,8 @@ formulario.addEventListener("submit", async function (evento) {
         renderizarResultados(
             libros,
             resultadosLibros,
-            mostrarDetalleLibro
+            mostrarDetalleLibro,
+            agregarLibro
         );
 
         // busqueda exitosa

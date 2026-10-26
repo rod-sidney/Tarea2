@@ -10054,6 +10054,74 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 
+.lectura-row {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.lectura-row--entrando {
+  opacity: 0;
+  transform: translateY(0.5rem);
+}
+
+.lectura-row--saliendo {
+  opacity: 0;
+  transform: translateX(0.75rem);
+  pointer-events: none;
+}
+
+.lectura-estado {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 50rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.lectura-estado--pendiente {
+  background-color: #f4ead5;
+  border-color: #e2d1ad;
+  color: #684c20;
+}
+
+.lectura-estado--leyendo {
+  background-color: #dcefe5;
+  border-color: #b5d8c4;
+  color: #24543b;
+}
+
+.lectura-estado--leido {
+  background-color: #f8e8b8;
+  border-color: #e6ce82;
+  color: #634b13;
+}
+
+.lectura-estado--animando {
+  animation: lectura-cambio-estado 450ms ease;
+}
+
+@keyframes lectura-cambio-estado {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lectura-row {
+    transition: none;
+  }
+  .lectura-estado--animando {
+    animation: none;
+  }
+}
 .proposal-form {
   background-color: var(--ec-surface);
   border: 1px solid var(--ec-border);
