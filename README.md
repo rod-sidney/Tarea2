@@ -113,3 +113,4 @@ La documentación del proceso de depuración y las capturas se encuentran en la 
 | 4 | 2026-10-25 | 3d1d9eb | Creación de la consulta al API y del proceso para mostrar los resultados obtenidos | buscador-js/js | api.js, renderizado.js
 | 5 | 2026-10-25 | 408e3fc | Envío de form de buscar libros, estados de interfaz y errores | buscador-js | busqueda.js, main.js |
 | 6 | 2026-10-25 | d00c031 | Corrección del método de cargar las portadas de los libros | buscador-js/js/renderizado.js | Corrección del método crearImagenPortada |
+| 7 | 2026-10-25 | 5b655b8 | Implementación de lista de lecturas con estados, delegación y animaciones | buscador-js | Agregar libros, evitar duplicados, cambiar estados, eliminar con transiciones |

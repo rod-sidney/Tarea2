@@ -112,55 +112,124 @@
       <form id="formPropuesta" class="proposal-form">
         <div class="row g-3">
           <div class="col-12 col-md-8">
-            <label for="tituloLibro" class="form-label">Título del libro</label>
-            <input id="tituloLibro" name="titulo" class="form-control" type="text" autocomplete="off"
-              placeholder="Título de la obra">
+            <label for="tituloLibro" class="form-label">
+              Título del libro
+            </label>
+
+            <input id="tituloLibro" name="titulo" class="form-control" type="text" minlength="2" maxlength="150"
+              autocomplete="off" placeholder="Título de la obra" data-etiqueta="el título del libro"
+              aria-describedby="errorTituloLibro" required>
+
+            <div id="errorTituloLibro" class="invalid-feedback"></div>
           </div>
+
           <div class="col-12 col-md-4">
-            <label for="anioPublicacion" class="form-label">Año de publicación</label>
-            <input id="anioPublicacion" name="anio" class="form-control" type="number" min="1" placeholder="Ej. 1967">
+            <label for="anioPublicacion" class="form-label">
+              Año de publicación
+            </label>
+
+            <input id="anioPublicacion" name="anio" class="form-control" type="number" min="1" step="1"
+              placeholder="Ej. 1967" data-etiqueta="el año de publicación" aria-describedby="errorAnioPublicacion"
+              required>
+
+            <div id="errorAnioPublicacion" class="invalid-feedback"></div>
           </div>
         </div>
 
         <h3 class="form-section-title">Autoría</h3>
+
         <div id="autoresContainer" class="row g-3">
           <div class="col-12 col-md-6 campo-autor">
             <label for="autor-1" class="form-label">Autor 1</label>
-            <input id="autor-1" name="autores[]" class="form-control" type="text" placeholder="Nombre del autor">
+
+            <input id="autor-1" name="autores[]" class="form-control" type="text" minlength="2" maxlength="100"
+              pattern=".*\S.*" placeholder="Nombre del autor" data-etiqueta="el autor 1" aria-describedby="errorAutor1"
+              required>
+
+            <div id="errorAutor1" class="invalid-feedback"></div>
+
+            <button class="btn btn-outline-danger btn-sm mt-2" type="button" data-accion="quitar-autor"
+              aria-label="Quitar autor 1" disabled>
+              Quitar autor
+            </button>
           </div>
         </div>
+
         <div class="mt-3">
-          <button id="agregarAutor" class="btn btn-outline-primary btn-sm" type="button">Agregar autor</button>
-          <p class="form-text mb-0">La propuesta admite entre uno y cinco autores.</p>
+          <button id="agregarAutor" class="btn btn-outline-primary btn-sm" type="button">
+            Agregar autor
+          </button>
+
+          <p class="form-text mb-0">
+            La propuesta admite entre uno y cinco autores.
+          </p>
         </div>
 
         <h3 class="form-section-title">Detalles de la propuesta</h3>
+
         <div class="row g-3">
           <div class="col-12 col-md-4">
-            <label for="cantidadPaginas" class="form-label">Cantidad de páginas</label>
-            <input id="cantidadPaginas" name="paginas" class="form-control" type="number" min="1" placeholder="Ej. 320">
+            <label for="cantidadPaginas" class="form-label">
+              Cantidad de páginas
+            </label>
+
+            <input id="cantidadPaginas" name="paginas" class="form-control" type="number" min="1" step="1"
+              placeholder="Ej. 320" data-etiqueta="la cantidad de páginas" aria-describedby="errorCantidadPaginas"
+              required>
+
+            <div id="errorCantidadPaginas" class="invalid-feedback"></div>
           </div>
+
           <div class="col-12 col-md-4">
             <label for="genero" class="form-label">Género</label>
-            <input id="genero" name="genero" class="form-control" type="text" placeholder="Ej. Novela">
+
+            <input id="genero" name="genero" class="form-control" type="text" minlength="3" maxlength="60"
+              pattern=".*\S.*" placeholder="Ej. Novela" data-etiqueta="el género" aria-describedby="errorGenero"
+              required>
+
+            <div id="errorGenero" class="invalid-feedback"></div>
           </div>
+
           <div class="col-12 col-md-4">
-            <label for="correoProponente" class="form-label">Correo de quien propone</label>
-            <input id="correoProponente" name="correo" class="form-control" type="email" autocomplete="email"
-              placeholder="nombre@ejemplo.com">
+            <label for="correoProponente" class="form-label">
+              Correo de quien propone
+            </label>
+
+            <input id="correoProponente" name="correo" class="form-control" type="email" maxlength="254"
+              autocomplete="email" placeholder="nombre@ejemplo.com" data-etiqueta="el correo electrónico"
+              aria-describedby="errorCorreoProponente" required>
+
+            <div id="errorCorreoProponente" class="invalid-feedback"></div>
           </div>
+
           <div class="col-12 col-md-6">
-            <label for="fechaSesion" class="form-label">Fecha propuesta para la sesión</label>
-            <input id="fechaSesion" name="fecha" class="form-control" type="date">
+            <label for="fechaSesion" class="form-label">
+              Fecha propuesta para la sesión
+            </label>
+
+            <input id="fechaSesion" name="fecha" class="form-control" type="date" data-etiqueta="la fecha de la sesión"
+              aria-describedby="errorFechaSesion" required>
+
+            <div id="errorFechaSesion" class="invalid-feedback"></div>
           </div>
+
           <div class="col-12">
-            <label for="motivoPropuesta" class="form-label">Motivo de la propuesta</label>
-            <textarea id="motivoPropuesta" name="motivo" class="form-control" rows="4"
-              placeholder="¿Por qué te gustaría leer este libro con el club?"></textarea>
+            <label for="motivoPropuesta" class="form-label">
+              Motivo de la propuesta
+            </label>
+
+            <textarea id="motivoPropuesta" name="motivo" class="form-control" rows="4" minlength="10" maxlength="1000"
+              placeholder="¿Por qué te gustaría leer este libro con el club?" data-etiqueta="el motivo de la propuesta"
+              aria-describedby="errorMotivoPropuesta" required></textarea>
+
+            <div id="errorMotivoPropuesta" class="invalid-feedback"></div>
           </div>
         </div>
+
         <div class="mt-4">
-          <button class="btn btn-primary" type="submit">Enviar propuesta</button>
+          <button id="btnEnviarPropuesta" class="btn btn-primary" type="submit">
+            Enviar propuesta
+          </button>
         </div>
       </form>
 
