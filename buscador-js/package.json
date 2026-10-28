@@ -4,7 +4,7 @@
   "private": true,
   "description": "Parte A de Tarea 2: buscador de libros con JavaScript, Bootstrap y Sass",
   "scripts": {
-    "sass:build": "sass --quiet-deps --silence-deprecation=import --load-path=node_modules scss/main.scss css/estilos.css --style=expanded",
+    "sass:build": "sass --quiet-deps --silence-deprecation=import --load-path=node_modules scss/main.scss css/estilos.css --style=compressed",
     "sass:watch": "sass --quiet-deps --silence-deprecation=import --load-path=node_modules --watch scss/main.scss:css/estilos.css --style=expanded"
   },
   "dependencies": {
