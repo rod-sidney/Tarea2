@@ -13,7 +13,7 @@ export async function buscarLibros(consulta) {
     // Prepara los parámetros de la petición.
     const parametros = new URLSearchParams({
         q: termino,
-        limit: "15"
+        limit: "12"
     });
 
     const url = `${URL_API}?${parametros.toString()}`;

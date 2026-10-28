@@ -451,7 +451,7 @@ formulario.addEventListener("submit", async function (evento) {
 
         mostrarAlertaPropuesta(
             "success",
-            "La propuesta se envió correctamente al servicio de pruebas."
+            "La propuesta se envió correctamente."
         );
 
         reiniciarFormulario();
