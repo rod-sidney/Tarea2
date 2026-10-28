@@ -116,3 +116,4 @@ La documentación del proceso de depuración y las capturas se encuentran en la 
 | 7 | 2026-10-25 | 5b655b8 | Implementación de lista de lecturas con estados, delegación y animaciones | buscador-js | Agregar libros, evitar duplicados, cambiar estados, eliminar con transiciones |
 | 8 | 2026-10-25 | 3a0efb8 | Creación del formulario de propuesta con validaciones y envío | buscador-js | Form, validaciones, envío a JsonPlaceholder |
 | 9 | 2026-10-27 | 38f487a | Últimos cambios antes de iniciar depuración | buscador-js | buscador-js/js |
+| 10 | 2026-10-27 | 9b32a89 | Optimización aplicada a Sass medida desde navegador | buscador-js/package.json, buscador-js/docs/depuracion.md, buscador-js/docs/capturas | Se modifica package.jason para la compilacion de Sass, en depuración.md se explica lo realizado, se suben las evidencias en la carpeta capturas.
