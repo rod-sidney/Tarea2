@@ -1,0 +1,5 @@
+// Convierte un número en una medida relativa expresada en rem.
+// Ejemplo: rem-size(1.5) devuelve 1.5rem.
+@function rem-size($factor) {
+  @return $factor * 1rem;
+}

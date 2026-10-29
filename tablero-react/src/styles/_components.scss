@@ -1,0 +1,247 @@
+@use "variables" as vars;
+@use "functions";
+@use "mixins";
+
+:root {
+  --ec-surface: #ffffff;
+  --ec-border: #e4e0d6;
+  --ec-shadow: 0 0.6rem 1.8rem rgba(36, 49, 45, 0.07);
+  --ec-muted: #626e68;
+  --ec-grid-gap: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  @include mixins.app-focus-ring;
+}
+
+.app-hero {
+  @include mixins.app-surface;
+  padding: functions.rem-size(1.25);
+  background-image: linear-gradient(135deg, rgba(vars.$primary, 0.09), rgba(vars.$secondary, 0.12));
+
+  .app-hero__eyebrow {
+    color: vars.$primary;
+    font-size: functions.rem-size(0.8);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .app-hero__title {
+    max-width: 18ch;
+    margin-inline: auto;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+  }
+
+  .app-hero__description {
+    max-width: 42rem;
+    margin-inline: auto;
+    color: var(--ec-muted);
+  }
+}
+
+.section-block {
+  margin-block: functions.rem-size(2.5);
+}
+
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: functions.rem-size(0.75);
+  margin-bottom: functions.rem-size(1.25);
+
+  .section-heading__description {
+    margin-bottom: 0;
+    color: var(--ec-muted);
+  }
+}
+
+.book-results-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--ec-grid-gap);
+
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.book-result-card {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.book-card__cover {
+  display: block;
+  width: 100%;
+  height: 15rem;
+  padding: 1rem;
+  object-fit: contain;
+  background-color: var(--ec-surface);
+}
+
+.book-detail-cover {
+  width: 100%;
+  max-height: 22rem;
+  padding: 1rem;
+  object-fit: contain;
+  background-color: var(--ec-surface);
+}
+
+.book-placeholder {
+  @include mixins.app-surface;
+  display: grid;
+  min-height: functions.rem-size(10);
+  place-items: center;
+  padding: functions.rem-size(1.5);
+  color: var(--ec-muted);
+  text-align: center;
+}
+
+.reading-list-table {
+  vertical-align: middle;
+
+  th {
+    white-space: nowrap;
+  }
+}
+
+// Transiciones y animaciones de la lista de lecturas - - -
+.lectura-row {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+// fila que se agrega
+.lectura-row--entrando {
+  opacity: 0;
+  transform: translateY(0.5rem);
+}
+
+// fila que se elimina
+.lectura-row--saliendo {
+  opacity: 0;
+  transform: translateX(0.75rem);
+  pointer-events: none;
+}
+
+// ESTADOS
+.lectura-estado {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 50rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+// Estado Pendiente
+.lectura-estado--pendiente {
+  background-color: #f4ead5;
+  border-color: #e2d1ad;
+  color: #684c20;
+}
+
+// Estado Leyendo
+.lectura-estado--leyendo {
+  background-color: #dcefe5;
+  border-color: #b5d8c4;
+  color: #24543b;
+}
+
+// Estado Leído
+.lectura-estado--leido {
+  background-color: #f8e8b8;
+  border-color: #e6ce82;
+  color: #634b13;
+}
+
+// Efecto cambiar de estado.
+.lectura-estado--animando {
+  animation: lectura-cambio-estado 450ms ease;
+}
+
+@keyframes lectura-cambio-estado {
+  0% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.12);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lectura-row {
+    transition: none;
+  }
+
+  .lectura-estado--animando {
+    animation: none;
+  }
+}
+
+.proposal-form {
+  @include mixins.app-surface;
+  padding: functions.rem-size(1.25);
+
+  .form-section-title {
+    margin-top: functions.rem-size(1.25);
+    margin-bottom: functions.rem-size(0.75);
+    font-family: vars.$font-family-sans-serif;
+    font-size: functions.rem-size(1.05);
+    font-weight: 700;
+  }
+}
+
+.app-footer {
+  margin-top: functions.rem-size(3);
+  padding-block: functions.rem-size(1.5);
+  background-color: vars.$dark;
+  color: #ffffff;
+
+  p {
+    margin-bottom: 0;
+    font-size: functions.rem-size(0.9);
+  }
+}
+
+@media (min-width: 48rem) {
+  .app-hero {
+    padding: functions.rem-size(2.5);
+  }
+
+  .proposal-form {
+    padding: functions.rem-size(2rem);
+  }
+}

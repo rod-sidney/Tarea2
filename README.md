@@ -118,3 +118,5 @@ La documentación del proceso de depuración y las capturas se encuentran en la 
 | 9 | 2026-10-27 | 38f487a | Últimos cambios antes de iniciar depuración | buscador-js | buscador-js/js |
 | 10 | 2026-10-27 | 9b32a89 | Optimización aplicada a Sass medida desde navegador | buscador-js/package.json, buscador-js/docs/depuracion.md, buscador-js/docs/capturas | Se modifica package.jason para la compilacion de Sass, en depuración.md se explica lo realizado, se suben las evidencias en la carpeta capturas.
 | 11 | 2026-10-27 | 971e983 | Documentación final de depuración y evidencias con breakpoint | buscador-js/docs | Documentación de investigación del error mediante un breakpoint |
+| 12 | 2026-10-28 | c9f1789 | Update README.md | Global | README.md
+| 13 | 2026-10-28 | 459b15e | Parte B - Crear tablero-react con Vite | tablero-react | Creación de proyecto React |

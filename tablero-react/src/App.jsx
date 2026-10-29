@@ -1,122 +1,80 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+    <div className="container py-4 py-lg-5">
+      <header className="mb-4 mb-lg-5">
+        <p className="text-primary text-uppercase fw-semibold small mb-2">
+          Club de lectura
+        </p>
+
+        <h1 className="display-5 fw-bold mb-3">
+          Estantería Común
+        </h1>
+
+        <p className="lead text-secondary mb-0">
+          Organiza los libros del club y consulta su progreso de lectura.
+        </p>
+      </header>
+
+      <main>
+        <section
+          className="card shadow-sm mb-4"
+          aria-labelledby="tituloResumen"
         >
-          Count is {count}
-        </button>
-      </section>
+          <div className="card-body p-4">
+            <h2 id="tituloResumen" className="h5 mb-3">
+              Resumen de lecturas
+            </h2>
 
-      <div className="ticks"></div>
+            <p className="text-secondary mb-0">
+              Aquí se mostrará la cantidad de libros en cada estado.
+            </p>
+          </div>
+        </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        <div className="row g-4">
+          <aside className="col-12 col-lg-4">
+            <section
+              className="card h-100"
+              aria-labelledby="tituloFiltros"
+            >
+              <div className="card-body p-4">
+                <h2 id="tituloFiltros" className="h5 mb-3">
+                  Filtros
+                </h2>
+
+                <p className="text-secondary mb-0">
+                  Aquí se podrá filtrar por estado de lectura y por miembro.
+                </p>
+              </div>
+            </section>
+          </aside>
+
+          <div className="col-12 col-lg-8">
+            <section
+              className="card h-100"
+              aria-labelledby="tituloLibros"
+            >
+              <div className="card-body p-4">
+                <h2 id="tituloLibros" className="h5 mb-3">
+                  Libros del club
+                </h2>
+
+                <p className="text-secondary mb-0">
+                  Aquí aparecerá la lista de libros propuestos por los miembros.
+                </p>
+              </div>
+            </section>
+          </div>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      </main>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <footer className="mt-5 pt-3 border-top">
+        <p className="small text-secondary mb-0">
+          Estantería Común · Tablero de lecturas del club
+        </p>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;

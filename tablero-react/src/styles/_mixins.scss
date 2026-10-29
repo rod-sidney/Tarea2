@@ -1,0 +1,18 @@
+@use "sass:color";
+@use "variables" as vars;
+
+// Estilo de foco visible para navegación con teclado
+@mixin app-focus-ring {
+  &:focus-visible {
+    outline: 0.2rem solid color.change(vars.$secondary, $alpha: 0.9);
+    outline-offset: 0.15rem;
+  }
+}
+
+// reutilizable para bloques principales
+@mixin app-surface {
+  background-color: var(--ec-surface);
+  border: 1px solid var(--ec-border);
+  border-radius: vars.$border-radius-xl;
+  box-shadow: var(--ec-shadow);
+}

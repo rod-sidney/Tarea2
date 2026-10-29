@@ -1,0 +1,61 @@
+// Compatibilidad con Bootstrap 5.3.
+// Se usa @import para compartir variables y mixins
+// en el orden esperado.
+@use "variables" as theme;
+
+// funciones
+@import "bootstrap/scss/functions";
+
+// variables
+$primary: theme.$primary;
+$secondary: theme.$secondary;
+$success: theme.$success;
+$info: theme.$info;
+$warning: theme.$warning;
+$danger: theme.$danger;
+$light: theme.$light;
+$dark: theme.$dark;
+
+$body-bg: theme.$body-bg;
+$body-color: theme.$body-color;
+$font-family-sans-serif: theme.$font-family-sans-serif;
+$headings-font-family: theme.$headings-font-family;
+$headings-font-weight: theme.$headings-font-weight;
+
+$border-radius: theme.$border-radius;
+$border-radius-lg: theme.$border-radius-lg;
+$border-radius-xl: theme.$border-radius-xl;
+$btn-border-radius: theme.$btn-border-radius;
+$card-border-color: theme.$card-border-color;
+$input-border-color: theme.$input-border-color;
+$input-focus-border-color: theme.$input-focus-border-color;
+$link-color: theme.$link-color;
+$link-hover-color: theme.$link-hover-color;
+
+// variables, mixins, utilidades
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// componentes necesarios
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
