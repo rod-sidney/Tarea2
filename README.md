@@ -120,3 +120,4 @@ La documentación del proceso de depuración y las capturas se encuentran en la 
 | 11 | 2026-10-27 | 971e983 | Documentación final de depuración y evidencias con breakpoint | buscador-js/docs | Documentación de investigación del error mediante un breakpoint |
 | 12 | 2026-10-28 | c9f1789 | Update README.md | Global | README.md
 | 13 | 2026-10-28 | 459b15e | Parte B - Crear tablero-react con Vite | tablero-react | Creación de proyecto React |
+| 14 | 2026-10-28 | 3993259 | Creación de archivos necesarios para la creación de componentes | tablero-react | Se modifica la estructura de la plantilla, se crean las carpetas /components y /data con los respectivos archivos, así como la carpeta/styles para ponerle los mismos estilos base que buscador-js, los cuales serán modificados según la necesidad. Se modificó también vite.config.js para que compile sass.
