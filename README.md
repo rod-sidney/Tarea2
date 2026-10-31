@@ -110,15 +110,17 @@ La documentación del proceso de depuración y las capturas se encuentran en la 
 | 1 | 2026-10-24 | 93230ec | Crear estructura inicial del repositorio | Carpetas | Global |
 | 2 | 2026-10-24 | fc7f875 | Parte A - Creación de html y estilos con sass | buscador-js | Estructura HTML y archivos scss |
 | 3 | 2026-10-24 | 6cef7fa | Cambios para scss y crear archivo main.js | buscador-js | Cambios en cuadrícula de resultados de búsqueda |
-| 4 | 2026-10-25 | 3d1d9eb | Creación de la consulta al API y del proceso para mostrar los resultados obtenidos | buscador-js/js | api.js, renderizado.js
+| 4 | 2026-10-25 | 3d1d9eb | Creación de la consulta al API y del proceso para mostrar los resultados obtenidos | buscador-js/js | api.js, renderizado.js |
 | 5 | 2026-10-25 | 408e3fc | Envío de form de buscar libros, estados de interfaz y errores | buscador-js | busqueda.js, main.js |
 | 6 | 2026-10-25 | d00c031 | Corrección del método de cargar las portadas de los libros | buscador-js/js/renderizado.js | Corrección del método crearImagenPortada |
 | 7 | 2026-10-25 | 5b655b8 | Implementación de lista de lecturas con estados, delegación y animaciones | buscador-js | Agregar libros, evitar duplicados, cambiar estados, eliminar con transiciones |
 | 8 | 2026-10-25 | 3a0efb8 | Creación del formulario de propuesta con validaciones y envío | buscador-js | Form, validaciones, envío a JsonPlaceholder |
 | 9 | 2026-10-27 | 38f487a | Últimos cambios antes de iniciar depuración | buscador-js | buscador-js/js |
-| 10 | 2026-10-27 | 9b32a89 | Optimización aplicada a Sass medida desde navegador | buscador-js/package.json, buscador-js/docs/depuracion.md, buscador-js/docs/capturas | Se modifica package.jason para la compilacion de Sass, en depuración.md se explica lo realizado, se suben las evidencias en la carpeta capturas.
+| 10 | 2026-10-27 | 9b32a89 | Optimización aplicada a Sass medida desde navegador | buscador-js/package.json, buscador-js/docs/depuracion.md, buscador-js/docs/capturas | Se modifica package.jason para la compilacion de Sass, en depuración.md se explica lo realizado, se suben las evidencias en la carpeta capturas. |
 | 11 | 2026-10-27 | 971e983 | Documentación final de depuración y evidencias con breakpoint | buscador-js/docs | Documentación de investigación del error mediante un breakpoint |
-| 12 | 2026-10-28 | c9f1789 | Update README.md | Global | README.md
+| 12 | 2026-10-28 | c9f1789 | Update README.md | Global | README.md |
 | 13 | 2026-10-28 | 459b15e | Parte B - Crear tablero-react con Vite | tablero-react | Creación de proyecto React |
 | 14 | 2026-10-28 | 3993259 | Creación de archivos necesarios para la creación de componentes | tablero-react | Se modifica la estructura de la plantilla, se crean las carpetas /components y /data con los respectivos archivos, así como la carpeta/styles para ponerle los mismos estilos base que buscador-js, los cuales serán modificados según la necesidad. Se modificó también vite.config.js para que compile sass.|
 | 15 | 2026-10-29 | 559c974 | Corrección de organización de archivos en el proyecto React | tablero-react | Se cambió la organización de los componentes, se ordenador por carpetas y se añadieron nuevos archivos para luego desarrollar los componentes necesarios |
+| 16 | 2026-10-29 | 3afc8a6 | Desarrollo de primeros componentes de tablero-react | tablero-react/componentes | en /comunes y /layout se desarrolla el código de los componentes respectivos. Aún no se conecta a App.jsx, por lo que es preliminar, falta probarlo. |
+/filtros /formulario /libros /resumen
