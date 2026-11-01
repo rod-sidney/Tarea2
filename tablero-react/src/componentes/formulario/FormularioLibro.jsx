@@ -2,7 +2,7 @@
 // Datos iniciales del formulario
 // comienza con un solo campo de autor
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
     GENEROS,
     MIEMBROS
@@ -31,6 +31,7 @@ function crearDatosVacios() {
 function FormularioLibro({ onAgregar }) {
     const [datos, setDatos] = useState(crearDatosVacios);
     const [errores, setErrores] = useState({});
+    const [confirmacionExito, setConfirmacionExito] = useState(0);
 
     // cambiar campos del form
     function cambiar(event) {
@@ -117,9 +118,20 @@ function FormularioLibro({ onAgregar }) {
 
         onAgregar(libroNuevo);
 
+        setConfirmacionExito((actual) => actual + 1);
         setDatos(crearDatosVacios());
         setErrores({});
     }
+
+    useEffect(() => {
+        if (confirmacionExito === 0) return;
+
+        const temporizador = setTimeout(() => {
+            setConfirmacionExito(0);
+        }, 5000);
+
+        return () => clearTimeout(temporizador);
+    }, [confirmacionExito]);
 
     // interfaz form
     return (
@@ -368,6 +380,16 @@ function FormularioLibro({ onAgregar }) {
             <button type="submit" className="btn btn-primary w-100">
                 Agregar libro
             </button>
+
+            {confirmacionExito > 0 && (
+                <div
+                    className="alert alert-success mt-3"
+                    role="alert"
+                    aria-live="polite"
+                >
+                    ¡El libro se agregó correctamente!
+                </div>
+            )}
 
         </form>
     );

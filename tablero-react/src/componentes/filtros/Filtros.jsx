@@ -1,12 +1,8 @@
 //Filtros.jsx
-// Muestra los filtros disponibles.
-// No guarda su propio estado: recibe los valores y las funciones
-// del componente padre.
+// Muestra los filtros disponibles
+// No guarda su propio estado: recibe los valores y las funciones del componente padre
 
-import {
-    ESTADOS_LECTURA,
-    MIEMBROS
-} from '../../data/libros.js';
+import { ESTADOS_LECTURA, MIEMBROS } from '../../data/libros.js';
 
 function Filtros({
     estado,
@@ -15,58 +11,66 @@ function Filtros({
     onCambiarMiembro
 }) {
     return (
-        <div className="row g-3">
+        <div
+            id="filtros"
+            className="col-12 col-lg-7"
+            aria-labelledby="titulo-filtros"
+        >
+            <h3 id="titulo-filtros" className="h5 mb-3">
+                Filtrar libros
+            </h3>
 
-            {/* Filtro por estado de lectura */}
-            <div className="col-12">
-                <label
-                    htmlFor="filtro-estado"
-                    className="form-label"
-                >
-                    Estado de lectura
-                </label>
+            <div className="row g-3">
 
-                <select
-                    id="filtro-estado"
-                    className="form-select"
-                    value={estado}
-                    onChange={(event) => onCambiarEstado(event.target.value)}
-                >
-                    <option value="Todos">Todos los estados</option>
+                {/* filtro por estado */}
+                <div className="col-12 col-md-6">
+                    <label htmlFor="filtro-estado" className="form-label">
+                        Estado de lectura
+                    </label>
 
-                    {ESTADOS_LECTURA.map((opcion) => (
-                        <option key={opcion} value={opcion}>
-                            {opcion}
-                        </option>
-                    ))}
-                </select>
+                    <select
+                        id="filtro-estado"
+                        className="form-select"
+                        value={estado}
+                        onChange={(event) =>
+                            onCambiarEstado(event.target.value)
+                        }
+                    >
+                        <option value="Todos">Todos los estados</option>
+
+                        {ESTADOS_LECTURA.map((opcion) => (
+                            <option key={opcion} value={opcion}>
+                                {opcion}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+
+                {/* filtro por miembro */}
+                <div className="col-12 col-md-6">
+                    <label htmlFor="filtro-miembro" className="form-label">
+                        Propuesto por
+                    </label>
+
+                    <select
+                        id="filtro-miembro"
+                        className="form-select"
+                        value={miembro}
+                        onChange={(event) =>
+                            onCambiarMiembro(event.target.value)
+                        }
+                    >
+                        <option value="Todos">Todos los miembros</option>
+
+                        {MIEMBROS.map((opcion) => (
+                            <option key={opcion} value={opcion}>
+                                {opcion}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+
             </div>
-
-            {/* Filtro por miembro que propuso el libro */}
-            <div className="col-12">
-                <label
-                    htmlFor="filtro-miembro"
-                    className="form-label"
-                >
-                    Propuesto por
-                </label>
-
-                <select
-                    id="filtro-miembro"
-                    className="form-select"
-                    value={miembro}
-                    onChange={(event) => onCambiarMiembro(event.target.value)}
-                >
-                    <option value="Todos">Todos los miembros</option>
-
-                    {MIEMBROS.map((opcion) => (
-                        <option key={opcion} value={opcion}>
-                            {opcion}
-                        </option>
-                    ))}
-                </select>
-            </div>
-
         </div>
     );
 }

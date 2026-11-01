@@ -1,7 +1,38 @@
-// =====================================================
-// LIBROS INICIALES
-// =====================================================
+//estados libros
+export const ESTADOS_LECTURA = [
+    'Pendiente',
+    'Leyendo',
+    'Leído'
+];
 
+// miembros del club
+export const MIEMBROS = [
+    'Ana Morales',
+    'Diego Vargas',
+    'Sofía Rojas',
+    'Mateo Castro',
+    'Valeria Jiménez'
+];
+
+//generos literarios
+export const GENEROS = [
+    'Biografía',
+    'Ciencia ficción',
+    'Fantasía',
+    'Historia',
+    'Literatura clásica',
+    'Misterio',
+    'Novela',
+    'Novela gráfica',
+    'Novela experimental',
+    'Poesía',
+    'Política',
+    'Realismo mágico',
+    'Romance'
+];
+
+
+// libros iniciales
 export const librosIniciales = [
     {
         id: 1,
