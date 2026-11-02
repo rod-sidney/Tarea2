@@ -35,10 +35,10 @@ function App() {
     return coincideEstado && coincideMiembro;
   });
 
-  // resumen de libros por estado
+  // resumen de libros por estado (según los filtros aplicados)
   const conteos = ESTADOS_LECTURA.map((estado) => ({
     estado,
-    cantidad: libros.filter((libro) => libro.estado === estado).length,
+    cantidad: librosFiltrados.filter((libro) => libro.estado === estado).length,
   }));
 
   // agregar un libro

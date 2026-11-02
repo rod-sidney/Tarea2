@@ -388,6 +388,9 @@ export function mostrarMensajeListaLecturas(
 
 // Activar transición de entrada fila
 export function animarEntradaFila(fila) {
+     // reconocer estado inicial antes de quitar la clase
+    void fila.offsetWidth;
+
     requestAnimationFrame(function () {
         fila.classList.remove("lectura-row--entrando");
     });
